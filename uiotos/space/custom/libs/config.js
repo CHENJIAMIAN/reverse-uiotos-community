@@ -51,7 +51,7 @@ function _0x4b13() {
     var _0x4df97f = window.constLayoutedHintString = "<p style='color:rgb(242,83,75);margin-top:5px;margin-bottom:5px;font-weight:bold;line-height:1.5em;'>已被布局，不允许拖动（shift+回车可解除）</p>"
       , _0x543145 = window.constLayoutedHintString_pureText = '已被布局，不允许拖动（shift+回车可解除）'
       , _0x16b136 = "<span style='font-weight:bold;color:rgb(125,195,125)'>说明：</span>"
-      , _0x49d334 = {
+      , htconfig = {
         'Color': {
             'background': '#2f3746'
         },
@@ -78,7 +78,7 @@ function _0x4b13() {
             }
         }
     }
-      , _0x546b5e = {
+      , hteditor_config = {
         'locale': 'zh',
         'color_select': "#06abee",
         'color_select_dark': "#ddd",
@@ -133,7 +133,7 @@ function _0x4b13() {
             'TitleNodeLayout': ![]
         }
     }
-      , _0x100edc = {
+      , customProperties = {
         'display': [{
             'valueType': "Boolean",
             'name': '开启专业模式',
@@ -827,7 +827,7 @@ function _0x4b13() {
         _0x5ee371.join('&');
     }
     var _0x1ff370 = 'develop/uiotos/editor/syspages'
-      , _0x3aefd3 = function(_0x518e7d, _0xfaabd8) {
+      , onEditorCreated = function(_0x518e7d, _0xfaabd8) {
         
         let _0x5a390f = ht.Default.drawStretchImage;
         ht.Default.drawStretchImage = function(_0x466b43, _0x5edd6d, _0x2783ab, _0x49af7b, _0x59cae3, _0x9b4baf, _0x3486c9, _0x2b3d6b, _0x46181c, _0x3c169a) {
@@ -1154,7 +1154,7 @@ function _0x4b13() {
             }
         }
     }
-    var _0x1a6ed3 = {
+    var dataBindings = {
         'getToolTip': function(_0x226a07, _0x37a363, _0x1fa61f) {
             
             let _0x1892e6 = editor.dm.sm().getLastData();
@@ -1865,7 +1865,7 @@ function _0x4b13() {
         }
         );
         let _0x56d6ec = _0x5de152 => {
-              , {kind: _0xd0809f, data: _0x181f99} = _0x5de152;
+            const {kind: _0xd0809f, data: _0x181f99} = _0x5de152;
             if (!_0x2e3255())
                 return;
             if ((_0xd0809f == "clickData" || _0xd0809f == "clickBackground") && _0x5de152.event) {
@@ -3605,7 +3605,7 @@ function _0x4b13() {
                                             if (!_0x5de152.event.shiftKey && !_0x5de152.event.ctrlKey && !_0x5de152.event.altKey && _0x181f99.getImage && typeof _0x181f99.getImage() == "string" && _0x181f99.getImage().slice(0x0, 0x8) == 'symbols/' && _0x181f99.ca("symbol") === undefined) {
                                                 _0x1c8239(_0x181f99.getImage());
                                                 let _0x580914 = _0xabd38b => {
-                                                      , {kind: _0xa32ffb, data: _0x39d2da} = _0xabd38b;
+                                                    const {kind: _0xa32ffb, data: _0x39d2da} = _0xabd38b;
                                                     if (_0xa32ffb == 'doubleClickBackground' && _0xabd38b.event) {
                                                         if (_0x2fe0af._i_stackJumpFrom == undefined)
                                                             _0x2fe0af._i_stackJumpFrom = {};
@@ -4020,7 +4020,7 @@ function _0x4b13() {
             _0x2edeed(_0x378981, _0x378981.dm() && _0x378981.dm().a('hideComments'));
         } catch (_0x59f7e7) {}
     }
-    var _0x1de8b8 = function(_0x4401d2, _0x1ba4c1, _0x29a1aa) {
+    var handleEvent = function(_0x4401d2, _0x1ba4c1, _0x29a1aa) {
         
         if (_0x1ba4c1 == "displayViewDataModelPropertyChanged") {
             if (_0x29a1aa.event.property == "a:hideComments") {
@@ -5099,8 +5099,8 @@ function _0x4b13() {
             }
         }
     }
-      , _0x375eaa = function(_0x7c13f5, _0x1f4891) {}
-      , _0x3f03e6 = function(_0x574cad) {
+      , onTitleCreating = function(_0x7c13f5, _0x1f4891) {}
+      , onRightToolbarCreated = function(_0x574cad) {
         
         _0x574cad.rightToolbar.setItemVisible("zoomIn", ![]),
         _0x574cad.rightToolbar.setItemVisible("zoomOut", ![]),
@@ -5431,7 +5431,7 @@ function _0x4b13() {
         }),
         _0x45c4fd.show();
     }
-    var _0x3c2b62 = function(_0x18ff77) {
+    var onMainToolbarCreated = function(_0x18ff77) {
         
         var _0x118e5e = _0x18ff77.mainToolbar;
         _0x118e5e.setItemVisible("Star", ![]),
@@ -6008,7 +6008,7 @@ function _0x4b13() {
         _0x298a23.push(_0x5ef87e),
         _0xae90f3.addItem(_0x233d89.createSymbolItem(_0x5ef87e, _0x5767d9, _0x339130, _0x41a21c, _0x5e7a11));
     }
-    var _0x33c956 = {
+    var valueTypes = {
         'GuanDao': {
             'type': "enum",
             'values': ["flowAdd", "flowReduce"],
@@ -6350,7 +6350,7 @@ function _0x4b13() {
             }
         }
     };
-    _0x546b5e.compactFilter = {
+    hteditor_config.compactFilter = {
         'isDataTitleVisible': function(_0x34d5ea, _0x4d0451, _0x438919) {
             
             switch (_0x438919) {
@@ -6486,7 +6486,7 @@ function _0x4b13() {
                             return ![];
                         }
                     }
-                    if (i.isControlTyped(_0xc8102f, 'pal') && .renderColor.indexOf(_0x2440cc) != -0x1)
+                    if (i.isControlTyped(_0xc8102f, 'pal') && ['renderColor'].indexOf(_0x2440cc) != -0x1)
                         return ![];
                 }
             }
@@ -6519,7 +6519,7 @@ function _0x4b13() {
             return !![];
         }
     },
-    _0x546b5e.detailFilter = {
+    hteditor_config.detailFilter = {
         'isDataTitleVisible': function(_0x528e86, _0x374ecf, _0x1095d0) {
             
             switch (_0x1095d0) {
@@ -6619,7 +6619,7 @@ function _0x4b13() {
         },
         'isDisplayTitleVisible': function(_0x2bd29b, _0x24e987) {
             
-            return .titlegridsguides.indexOf(_0x24e987.toLowerCase()) == -0x1;
+            return ['titlegridsguides'].indexOf(_0x24e987.toLowerCase()) == -0x1;
         },
         'isDisplayPropertyVisible': function(_0x3c4fbe, _0x17e0cd) {
             
@@ -6637,17 +6637,17 @@ function _0x4b13() {
             return !![];
         }
     },
-    _0x546b5e.onEditorCreated = _0x3aefd3,
-    _0x546b5e.dataBindings = _0x1a6ed3,
-    _0x546b5e.handleEvent = _0x1de8b8,
-    _0x546b5e.onTitleCreating = _0x375eaa,
-    _0x546b5e.onRightToolbarCreated = _0x3f03e6,
-    _0x546b5e.onMainToolbarCreated = _0x3c2b62,
-    _0x546b5e.customProperties = _0x100edc,
-    _0x546b5e.valueTypes = _0x33c956,
-    window.hteditor_config = _0x546b5e,
-    window.htconfig = _0x49d334,
-    window.valueTypes = _0x33c956,
+    hteditor_config.onEditorCreated = onEditorCreated,
+    hteditor_config.dataBindings = dataBindings,
+    hteditor_config.handleEvent = handleEvent,
+    hteditor_config.onTitleCreating = onTitleCreating,
+    hteditor_config.onRightToolbarCreated = onRightToolbarCreated,
+    hteditor_config.onMainToolbarCreated = onMainToolbarCreated,
+    hteditor_config.customProperties = customProperties,
+    hteditor_config.valueTypes = valueTypes,
+    window.hteditor_config = hteditor_config,
+    window.htconfig = htconfig,
+    window.valueTypes = valueTypes,
     _0x179723(".dialog-overlay{\r\n    background: rgba(0, 0, 0, 0.3) !important;\r\n}", {}),
     _0x179723(".dialog-container > div:nth-child(1){\r\n    background: rgba(17, 17, 17, 0) !important;\r\n}", {});
 }()));
