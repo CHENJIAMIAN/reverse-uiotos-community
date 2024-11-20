@@ -18096,13 +18096,13 @@ var hteditor = (function() {
                   , _0x113dc8 = this._crossDragInfo.parent
                   , _0x2855ac = this._crossDragInfo.refData;
                 _0x37c405 !== this.editor.symbols.getFileListView() && _0x37c405 !== this.editor.assets.getFileListView() || _0x37c405.toDraggingDatas('down' === _0xaafc59).forEach(function(_0x52f72d) {
-                    var _0x3609c8 = new ht.Node();
-                    _0x3609c8.setImage(_0x52f72d.getFileUUID()),
-                    _0x3609c8.setDisplayName(_0x49a0c6(_0x52f72d.getName())),
-                    _0x1ed5c0.push(_0x3609c8),
-                    _0x159b08.displayView.addData(_0x3609c8, true),
-                    _0x159b08.editor.gv['$64$']([_0x3609c8]),
-                    _0x159b08._dropData(_0x3609c8, _0xaafc59, _0x113dc8, _0x2855ac);
+                    var node1 = new ht.Node();
+                    node1.setImage(_0x52f72d.getFileUUID()),
+                    node1.setDisplayName(_0x49a0c6(_0x52f72d.getName())),
+                    _0x1ed5c0.push(node1),
+                    _0x159b08.displayView.addData(node1, true),
+                    _0x159b08.editor.gv['$64$']([node1]),
+                    _0x159b08._dropData(node1, _0xaafc59, _0x113dc8, _0x2855ac);
                 }),
                 _0x37c405 === this.editor.displays.getFileListView() && _0x37c405.toDraggingDatas('down' === _0xaafc59).forEach(function(_0x3bbe87) {
                     
@@ -32863,7 +32863,7 @@ var hteditor = (function() {
         ,
         _0x45f2bd;
     }(_0x51341a)
-      , _0x502343 = (function() {
+      , Editor = (function() {
         
         function _0x1a9de8(_0x2397b6) {
             
@@ -34512,12 +34512,12 @@ var hteditor = (function() {
         }]),
         _0x1a9de8;
     }());
-    _0xaf6dfc(_0x502343, {
+    _0xaf6dfc(Editor, {
         'ms_fire': 1,
         '_rulerEnabled': hteditor2.config.rulerEnabled,
         '_gridEnabled': hteditor2.config.gridEnabled
     }),
-    hteditor2.Editor = _0x502343;
+    hteditor2.Editor = Editor;
     var _0x66a490 = (function() {
         
         function _0x163066(_0x491741, _0x44012b) {
@@ -34884,7 +34884,7 @@ var hteditor = (function() {
         _0x3c0660.style.height = _0x307963[3] + 'px',
         document.body.appendChild(_0x3c0660)) : _0x3c0660 = _0x307963 : _0x3c0660 = document.body,
         _0x26b115["$39$"] = _0x3c0660,
-        new _0x502343(_0x26b115);
+        new Editor(_0x26b115);
     }
     ,
     hteditor2.init = function() {
