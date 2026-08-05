@@ -1,3 +1,7 @@
+[English](./README.en.md)
+
+# UIOTOS Community 逆向研究
+
 <!-- codex-github-rules:bilingual-summary -->
 > **中文简介**：UIOTOS 社区版零代码前端的逆向研究
 
@@ -5,149 +9,72 @@
 
 ---
 
-## Reference
+本仓库记录 UIOTOS Community 前端零代码平台的逆向研究与可运行快照。UIOTOS 强调页面嵌套、逻辑连线和可视化搭建，适合不熟悉传统前端框架或开发环境的使用者构建 IoT、后台管理、SCADA、HMI 等 GUI 应用。
 
-![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E5%B7%A5%E5%85%B7%E5%A4%96%E8%A7%82.jpg)
+## 版本
 
-![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E7%A4%BA%E4%BE%8B%E6%95%88%E6%9E%9C.png)
+- v1.0.301143：初始版本。
 
-![](https://gitee.com/uiotos/uiotos-community/raw/master/images/CMCC.png)
+## UIOTOS 是什么
 
-![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E6%8B%9B%E5%95%86%E7%A7%9F%E8%B5%81.gif)
+UIOTOS 是一个可页面嵌套的前端零代码工具。常见应用不需要编写代码或搭建开发环境，也不要求了解 JavaScript、C# 或 Qt 等前端开发语言。
 
-## Release Notes
-- **v1.0.301143** 
-      
-    initial
+### 设计动机
 
-## Introduction
-### What is UIOTOS?
-A frontend no-code tool supporting **page nesting**, ready-to-use, where users do not need to understand code development or environment setup and can build IoT, back-end management, SCADA, HMI, and other GUI applications without any prior knowledge, going beyond mere visualization.
-> Front-end development languages like JavaScript, C#, Qt, etc., UIOTOS users don't need any background in these.
+- 低代码仍要求基础开发知识和少量编码，门槛对后端、算法、硬件、电气、产品或设计背景的用户并不低。
+- 传统平台依赖内置组件，功能扩展常需要升级组件；UIOTOS 可通过页面嵌套组合已有组件。
+- Vue、amis、Qt 等通常用代码或 JSON 配置描述复杂界面；UIOTOS 的嵌套与连线更直接，强调所见即所得。
 
-    ![](https://gitee.com/uiotos/uiotos-community/raw/master/images/aaa.gif)
-    ![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E8%BF%9E%E7%BA%BF%E7%A4%BA%E4%BE%8B.gif)
+### 主要特点
 
-<a name="Y8OBl"></a>
-### Why was it created?
-- **Even low-code requires some knowledge**
+- 容器可无限层级嵌套，无需 JSON 配置或代码。
+- 可通过连线和解析字符串处理复杂 JSON 数据。
+- 可将 jQuery Markdown、Element UI、amis 等既有 Web 资源封装成组件，再用于嵌套和连线。
+- 配置可导出为 JSON，供其他框架使用。
 
-    Low-code tools still require basic development skills and minimal coding, which can be a barrier for users with backgrounds in backend development, algorithms, hardware, electrical engineering, product design, UI design, etc. With UIOTOS, you don't need to write a single line of code for common applications.
-    > UIOTOS significantly lowers the user threshold so that even those without front-end coding experience can use it.
+### 适用范围
 
-- **Limited functionality means upgrading components**
+适合企业后台、IoT 应用、SCADA、大屏配置和工业 HMI。3D 数字孪生、移动端小程序、后端业务逻辑和专用文档工具并非主要目标，但可通过二次开发扩展。
 
-    Conventional tools heavily rely on built-in components and require frequent upgrades to meet various needs. UIOTOS supports page nesting, allowing users to combine and nest existing components to extend functionality. With the same number of components, UIOTOS can achieve an order of magnitude more uses compared to conventional tools.
-    > UIOTOS doesn't completely depend on code extensions, achieving more with fewer components.
-- **Interface development isn’t intuitive**
+## 社区版
 
-    Whether it's the Vue front-end framework, the amis low-code framework, or desktop frameworks like Qt, complex interfaces can be developed through code or JSON configuration, leading to nested components and incremental development. However, this can be abstract and unintuitive, especially when adding interface interactions. UIOTOS nesting and wiring are extremely intuitive.
-    > UIOTOS is WYSIWYG (What You See Is What You Get), with prototypes directly translatable into applications, making the process clear and straightforward.
-<a name="Tg2XA"></a>
-### What are its highlights?
-- **Containers support unlimited nesting levels, with no JSON configuration or code required.**
+社区版开放页面嵌套、属性继承和逻辑连线的核心实现，方便学习和参考。
 
-    Pages are nested through container components and support property inheritance, where properties of lower-level page components can be appended to the configuration of higher-level components.
+- 上游开源仓库：[uiotos/uiotos-community](https://github.com/uiotos/uiotos-community)
+- 上游许可证：Apache 2.0
+- 核心代码：kernel/baseControls.js、kernel/iotosEngines.js、kernel/iotosCommon.js
+- 技术栈：原生 JavaScript 和 ht.js 图形库
 
-    ![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%A5%97.gif)
+嵌套支持无限垂直层级、每层多个并存容器、组合式多页面嵌套、属性继承与覆盖，以及属性变化逐层向上冒泡重新执行逻辑。
 
-- **Any complex JSON data can be set or parsed without code.**
+## 快速开始
 
-    Wiring, configured with [parse string](https://www.yuque.com/liuhuo-nc809/uiotos/zl6xhi59n2xww3oq#KfdCR), can extract specific fields from arbitrarily complex structured JSON data.
+1. 在 Linux 或 Windows 安装最新版 [Node.js](https://url.nodejs.cn/download/)。
+2. 克隆上游仓库：
 
-    ![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E6%95%B0%E6%8D%AE%E6%97%A0%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90.gif)
+~~~text
+git clone https://github.com/uiotos/uiotos-community.git
+~~~
 
-- **Existing web resources (like jQuery-based markdown) can be encapsulated as built-in components, eliminating the need to reinvent the wheel.**
+3. 在 uiotos-community 目录启动服务：
 
-    Components from frameworks like Element UI, amis, etc., can also be encapsulated for use with UIOTOS, for nesting and wiring.
-    Configurations for nesting and wiring created with UIOTOS can be output in JSON format for use with other frameworks, enabling bidirectional compatibility.
-    
-    ![](https://gitee.com/uiotos/uiotos-community/raw/master/images/markdown%E7%BB%84%E4%BB%B6.png)
+~~~text
+node .\uiotos\server\server.js
+~~~
 
-<a name="dXcPx"></a>
-### Where is it applicable?
+Windows 上可以双击 run.bat。通过 .\uiotos\server\config.ini 修改端口。
 
-UIOTOS is not a "silver bullet" and has both suitable and less suitable scenarios. These are as follows:
-- **Suitable Scenarios**
+4. 服务启动后，在浏览器访问：
 
-    Corporate application interfaces, including back-end management, IoT applications, SCADA systems, large-screen configurations, and industrial HMIs.
-- **Less Suitable (but can be extended through custom development)**
+~~~text
+http://localhost:8999
+~~~
 
-    3D digital twins, mobile mini-apps, backend business logic, and specialized tools like documentation.
-    
-## About Community Edition 
-- **Purpose of Open Source**
+建议使用 Google Chrome。
 
-    The technology of **page nesting** (and **logical wiring**) has wide-ranging applications, such as flowcharts, prototyping, "PowerPoint," rule chains, interface development, and visual programming. UIOTOS is implemented using JavaScript and ht.js, and involves the following details about page nesting:
+## 使用与资料
 
-    - **Vertical**: 
-    
-        Supports unlimited nesting of pages.
-    - **Horizontal**: 
-    
-        Each level can have multiple coexisting nested containers.
-    - **Combined Vertical**: 
-    
-        A component can nest multiple pages (each of which can have arbitrary levels of nesting). For example, tabbed pages, tree-tables.
-    - **Inheritance**: 
-    
-        Properties at any level can be inherited by upper levels and overwritten to modify their values.
-    - **Bubble Up**: 
-    
-        Each layer runs independently and executes logic, and changes in property values bubble up layer by layer, triggering re-execution in upper layers.
+- 示例地址：[203.189.6.3:8999](http://203.189.6.3:8999/) / [203.189.6.3:18999](http://203.189.6.3:18999/)
+- [UIOTOS 用户手册](https://www.yuque.com/liuhuo-nc809/uiotos)
 
-    UIOTOS Community Edition provides the full code implementation for nesting, inheritance, and wiring, along with design concepts and implementation details, for developers to learn and reference. As a new technology, we welcome participation in joint development and maintenance.
-- **Open Source Repository**: [GitHub-uiotos/uiotos-community](https://github.com/uiotos/uiotos-community)
-- **Open Source License:** `Apache 2.0`
-- **Core Code**
-    - Common base components (`kernel/baseControls.js`)
-    - Nesting and wiring engine (`kernel/iotosEngines.js`)
-    - Commonly used functions (`kernel/iotosCommon.js`)
-- **Technology Stack**
-    - **Native JavaScript**
-
-        No need to understand Vue, ES6, TypeScript, Webpack, or other frameworks or scaffolds.
-    - **ht.js Graphics Library**
-
-        To understand the implementation principles in-depth, some familiarity with ht.js is beneficial. For secondary development of components, this is not necessary. Components can be developed using other frameworks like jQuery or Vue based on the UIOTOS template.
-
-<a name="yHLpL"></a>
-## Getting Started
-- **Step 1: Prepare the Environment**
-
-    On Linux or Windows, <a href='https://url.nodejs.cn/download/'>install Node.js</a> (the latest version).
-- **Step 2: Clone the Repository**
-
-    ```
-    git clone https://github.com/uiotos/uiotos-community.git
-    ```
-- **Step 3: Start the Service**
-
-    Navigate to the `uiotos-community` directory and start the service with the following command: (On Windows, you can double-click run.bat to start.)
-    ```
-    node .\uiotos\server\server.js
-    ```
-    > Note: The file `.\uiotos\server\config.ini` can be used to change the server port.
-
-   ![输入图片说明](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E6%97%A0%E4%BB%A3%E7%A0%81%E5%B9%B3%E5%8F%B0%E5%90%AF%E5%8A%A8.png)
-
-- **Step 4: Open the Webpage**
-
-    After starting the service, the browser will automatically open on Windows. If it doesn't, manually enter the server address and port, typically:
-    ```
-    http://localhost:8999
-    ```
-    > Note: It is recommended to use Google Chrome only.
-    
-    ![](https://gitee.com/uiotos/uiotos-community/raw/master/images/UIOTOS%E9%A6%96%E9%A1%B5.png)
-        
-<a name="dMCwf"></a>
-## Usage
-
-![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E7%A4%BA%E4%BE%8B.jpg)
-
-Demo: [203.189.6.3:8999（Fully）](http://203.189.6.3:8999/)  / [203.189.6.3:18999](http://203.189.6.3:18999/)
-
-Document: [UIOTOS User Manual](https://www.yuque.com/liuhuo-nc809/uiotos)
-
-Contact：![微信联系](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E5%BE%AE%E4%BF%A1.png)
+完整英文介绍、参考图片和上游说明见 [README.en.md](./README.en.md)。
