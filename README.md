@@ -1,3 +1,10 @@
+<!-- codex-github-rules:bilingual-summary -->
+> **中文简介**：UIOTOS 社区版零代码前端的逆向研究
+
+> **English summary**: Reverse engineering research for the UIOTOS Community no-code frontend
+
+---
+
 ## Reference
 
 ![](https://gitee.com/uiotos/uiotos-community/raw/master/images/%E5%B7%A5%E5%85%B7%E5%A4%96%E8%A7%82.jpg)
